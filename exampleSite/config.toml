@@ -1,8 +1,8 @@
 # Site settings
 baseurl = "http://replace-this-with-your-domain.com/"
 languageCode = "en-us"
-title = "Hugo Cactus Theme"
-theme = "hugo-cactus-theme"
+title = "Hugo Orchid Theme"
+theme = "hugo-orchid-theme"
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 # Disable comments by leaving disqusShortname empty

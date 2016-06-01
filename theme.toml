@@ -1,15 +1,21 @@
-name = "Cactus"
+name = "Orchid"
 license = "MIT"
-licenselink = "//github.com/digitalcraftsman/hugo-cactus-theme/blob/master/License.md"
+licenselink = "//github.com/davidyorr/hugo-orchid-theme/blob/master/LICENSE.md"
 description = "A minimalistic and responsive theme for bloggers."
-homepage = "//github.com/digitalcraftsman/hugo-cactus-theme"
+homepage = "//github.com/davidyorr/hugo-orchid-theme"
 tags = ["blog", "disqus", "google analytics", "rss", "syntax highlighting"]
 features = ["disqus", "google analytics", "rss", "syntax highlighting", "blog", "pagination", "<sharing options"]
 min_version = 0.15
 
 [author]
+  name = "David Orr"
+  homepage = "//github.com/davidyorr"
+
+[[original]]
+  # Ported the Jekyll kactus theme to Hugo
   name = "digitalcraftsman"
   homepage = "//github.com/digitalcraftsman"
+  repo = "//github.com/digitalcraftsman/hugo-cactus-theme"
 
 [[original]]
   # Ported the stardard theme of the Cactus for Mac static site generator to Jekyll
