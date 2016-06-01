@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2015 [Cactus Authors](//github.com/koenbok/Cactus/blob/master/AUTHORS), [Nick Balestra](//github.com/nickbalestra) and [digitalcraftsman](//github.com/digitalcraftsman)
+Copyright (c) 2015 [Cactus Authors](//github.com/koenbok/Cactus/blob/master/AUTHORS), [Nick Balestra](//github.com/nickbalestra), [digitalcraftsman](//github.com/digitalcraftsman), and [David Orr](//github.com/davidyorr)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
