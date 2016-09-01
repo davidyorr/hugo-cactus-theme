@@ -39,14 +39,12 @@ popd() {
 
 # Load the repositories from the provided environment variables or our defaults
 HUGO_THEME_SITE_REPO=${HUGO_THEME_SITE_REPO:-https://github.com/spf13/HugoThemesSite.git}
-HUGO_BASIC_EXAMPLE_REPO=${HUGO_BASIC_EXAMPLE_REPO:-https://github.com/spf13/HugoBasicExample.git}
 
 echo "Using ${HUGO_THEME_SITE_REPO} for theme site"
-echo "Using ${HUGO_BASIC_EXAMPLE_REPO} for example site"
 
 GLOBIGNORE=.*
-siteDir="$(cd "$(dirname "${BASH_SOURCE[1]}")" && pwd)/hugoThemeSite"
-exampleSiteDir="$(cd "$(dirname "${BASH_SOURCE[1]}")" && pwd)/exampleSite"
+rootDir="$(cd "$(dirname "${BASH_SOURCE[1]}")" && pwd)"
+siteDir="$rootDir/hugoThemeSite"
 
 configTplPrefix="config-tpl"
 configBase="${configTplPrefix}-base"
@@ -64,18 +62,6 @@ if [ -d themeSite ]; then
 else
 	git clone ${HUGO_THEME_SITE_REPO} themeSite
 fi
-
-if [ -d exampleSite ]; then
-	pushd exampleSite
-	git pull --rebase
-	popd
-else
-	cp -r $exampleSiteDir exampleSite
-fi
-
-pushd exampleSite
-
-popd
 
 echo "BUILDING FROM" `pwd`
 
@@ -130,12 +116,8 @@ for x in `ls -d exampleSite/themes/*/ | cut -d / -f3`; do
 	echo "thumbnail = \"/images/$x.tn.png\"" >>themeSite/content/$x.md
 	repo=`git -C exampleSite/themes/$x remote -v | head -n 1 | awk '{print$2}'`
 
-	pushd exampleSite/themes
-	themeCreated=`git log --reverse --pretty=format:"%ai" $x | head -1`
-	pushd $x
-	themeUpdated=`git log --pretty=format:"%ai" -n1`
-	popd
-	popd
+	themeCreated=`git -C $rootDir log --reverse --pretty=format:"%ai" | head -1`
+	themeUpdated=`git -C $rootDir log --pretty=format:"%ai" -n1`
 
 	echo "date = \"$themeCreated\"" >>themeSite/content/$x.md
 	echo "lastmod = \"$themeUpdated\"" >>themeSite/content/$x.md
