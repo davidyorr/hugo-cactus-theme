@@ -39,8 +39,12 @@ popd() {
 
 # Load the repositories from the provided environment variables or our defaults
 HUGO_THEME_SITE_REPO=${HUGO_THEME_SITE_REPO:-https://github.com/spf13/HugoThemesSite.git}
+HUGO_BASIC_EXAMPLE_REPO=${HUGO_BASIC_EXAMPLE_REPO:-https://github.com/spf13/HugoBasicExample.git}
+HUGO_THEMES_REPO=${HUGO_THEMES_REPO:-https://github.com/davidyorr/hugo-orchid-theme.git}
 
+echo "Using ${HUGO_THEMES_REPO} for themes"
 echo "Using ${HUGO_THEME_SITE_REPO} for theme site"
+echo "Using ${HUGO_BASIC_EXAMPLE_REPO} for example site"
 
 GLOBIGNORE=.*
 rootDir="$(cd "$(dirname "${BASH_SOURCE[1]}")" && pwd)"
@@ -62,6 +66,27 @@ if [ -d themeSite ]; then
 else
 	git clone ${HUGO_THEME_SITE_REPO} themeSite
 fi
+
+if [ -d exampleSite ];then
+	pushd exampleSite
+	git pull --rebase
+	popd
+else
+	git clone ${HUGO_BASIC_EXAMPLE_REPO} exampleSite
+fi
+
+pushd exampleSite
+
+if [ ! -d themes ]; then
+	mkdir themes
+fi
+
+pushd themes
+rm -rf *
+git clone ${HUGO_THEMES_REPO}
+popd
+
+popd
 
 echo "BUILDING FROM" `pwd`
 
