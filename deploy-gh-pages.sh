@@ -2,7 +2,7 @@
 
 # generate the site
 ./hugoThemeSiteScript/generateThemeSite.sh https://davidyorr.github.io/hugo-orchid-theme/
-hugo -s hugoThemeSite/themeSite
+hugo -s hugoThemeSite/themeSite -b https://davidyorr.github.io/hugo-orchid-theme
 
 # clone master into a temp directory
 TMP_DIR=temp
