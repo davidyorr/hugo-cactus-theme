@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rss on Hugo Themes</title>
-    <link>https://davidyorr.github.io/hugo-orchid-theme/tags/rss/</link>
+    <link>http://themes.gohugo.io/tags/rss/</link>
     <description>Recent content in Rss on Hugo Themes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 18 Jun 2015 18:29:31 +0200</lastBuildDate>
-    <atom:link href="https://davidyorr.github.io/hugo-orchid-theme/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://themes.gohugo.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>https://davidyorr.github.io/hugo-orchid-theme/hugo-orchid-theme/</link>
+      <link>http://themes.gohugo.io/hugo-orchid-theme/</link>
       <pubDate>Thu, 18 Jun 2015 18:29:31 +0200</pubDate>
       
-      <guid>https://davidyorr.github.io/hugo-orchid-theme/hugo-orchid-theme/</guid>
+      <guid>http://themes.gohugo.io/hugo-orchid-theme/</guid>
       <description>
 
 &lt;h1 id=&#34;orchid-theme&#34;&gt;Orchid Theme&lt;/h1&gt;
