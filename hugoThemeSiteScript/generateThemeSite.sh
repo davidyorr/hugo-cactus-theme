@@ -5,6 +5,7 @@
 # 
 # Instead of pulling the themes from https://github.com/spf13/hugoThemes.git,
 # it just uses this theme.
+# Adds 'relativeURLs = true' option to the config.toml.
 #
 
 function try() {
@@ -135,6 +136,9 @@ for x in `ls -d exampleSite/themes/*/ | cut -d / -f3`; do
 
 	cp exampleSite/themes/$x/images/screenshot.png themeSite/static/images/$x.screenshot.png
 	cp exampleSite/themes/$x/images/tn.png themeSite/static/images/$x.tn.png
+
+	sed -i.old '1s;^;relativeURLs = true\
+;' themeSite/config.toml
 
 	echo "+++" >themeSite/content/$x.md
 	echo "screenshot = \"/images/$x.screenshot.png\"" >>themeSite/content/$x.md
