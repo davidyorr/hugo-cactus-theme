@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # generate the site
-./hugoThemeSiteScript/generateThemeSite.sh
+./hugoThemeSiteScript/generateThemeSite.sh https://davidyorr.github.io/hugo-orchid-theme/
 hugo -s hugoThemeSite/themeSite
 
 # clone master into a temp directory
